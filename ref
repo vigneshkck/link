@@ -1,0 +1,78 @@
+index.html
+
+<div class="wimbledon">
+      <div class="wimbledon-2 active">destinations <a href="#">book now</a></div>
+    </div>
+    
+    css
+    
+    .wimbledon-2{
+    background-image: linear-gradient(to right,yellowgreen, orangered ,#31aa52 );
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip:text;
+    background-clip: text;
+    font-style: italic;
+    font-weight: 900;
+    position: absolute;
+    display:flex;
+    overflow-x:hidden;
+    top: 39%;
+    left: 43%;
+    z-index: 600;
+    
+    text-transform: uppercase;
+    font-size: xx-large;
+   
+}
+
+.active{
+
+    animation-name: rafael ;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+}
+
+@keyframes rafael{
+    0%{
+        transform: translateX(-280%);
+    }
+
+    50%{
+        transform: translateX(280%);
+        opacity: 1;
+    }
+
+    51%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+
+js file
+
+
+document.querySelector('.wimbledon-2').addEventListener('mouseover',() => {
+
+    if(window.onmouseover=true){
+        document.querySelector('.wimbledon-2').classList.remove('active');
+        console.log('1111111111111111111111');
+    }
+    else if(window.onmouseout=true){
+        document.querySelector('.wimbledon-2').classList.add('active');
+        console.log('222222222222222222222');
+    }else{
+        console.log('44444444444');
+    }
+    // console.log('kk');
+
+})
+
+document.querySelector('.wimbledon-2').addEventListener('mouseover',(e) => {
+      const value=e.clientX;
+      document.querySelector('.wimbledon-2').style.left=value+'px';
+});
